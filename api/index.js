@@ -39,7 +39,7 @@ app.use('/uploads' , express.static(__dirname+'/uploads'));
 // Handle CORS options requests
 app.options('*', cors());
 
-app.get('/test' , (req,res) => {
+app.get('/' , (req,res) => {
    res.json('test ok');
 });
 
@@ -204,7 +204,9 @@ app.post('/booking',(req,res) => {
   const {place,checkIn,checkOut,numberOfGuests,name,phone} = req.body;
 })
 
-  
+app.get('/' , (req,res) => {
+  res.json("hello console")
+})
  //this is  listening on port
 app.listen(3000 , () =>{
   console.log('successfully listening on port 3000');
